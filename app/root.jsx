@@ -5,6 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  Link,
+  NavLink,
 } from "react-router";
 
 import "./app.css";
@@ -32,6 +34,72 @@ export function Layout({ children }) {
         <Links />
       </head>
       <body>
+        <nav className="max-w-6xl mx-auto">
+          <ul
+            className="flex items-center justify-around mt-7 
+          "
+          >
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "bg-amber-700  px-4 rounded-md py-3 text-white cursor-pointer"
+                      : ""
+                  }`
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/movies"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "bg-amber-700 px-4 rounded-md py-3 text-white cursor-pointer"
+                      : ""
+                  }`
+                }
+                prefetch="intent"
+              >
+                Movies
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/series"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "bg-amber-700 px-4 rounded-md py-3 text-white cursor-pointer"
+                      : ""
+                  }`
+                }
+                prefetch="intent"
+              >
+                Series
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `${
+                    isActive
+                      ? "bg-amber-700 px-4 rounded-md py-3 text-white cursor-pointer"
+                      : ""
+                  }`
+                }
+                prefetch="intent"
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
         {children}
         <ScrollRestoration />
         <Scripts />

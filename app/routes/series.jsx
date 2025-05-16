@@ -21,13 +21,13 @@ export default function Series({ loaderData }) {
       <h1 className="text-6xl font-bold mb-7">Series</h1>
       <Link
         to="/"
-        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white my-7"
+        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white my-7 cursor-pointer"
       >
         Go back home
       </Link>
       <div className="grid grid-cols-3 gap-4 mt-8">
         {loaderData.map((item) => (
-          <Link key={item.id} to={`/series/${item.id}`}>
+          <Link key={item.id} to={`/series/${item.id}`} prefetch="intent">
             <MediaCard
               posterPath={item.poster_path}
               title={item.original_name}

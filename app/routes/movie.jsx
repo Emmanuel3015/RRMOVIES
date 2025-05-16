@@ -16,10 +16,10 @@ export default function Movie({ loaderData }) {
   let navigate = useNavigate();
   console.log({ movie: loaderData });
   return (
-    <main className="max-w-6xl mx-auto mt-20">
+    <main className="max-w-6xl mx-auto mt-10">
       <button
         onClick={() => navigate(-1)}
-        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white my-7"
+        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white mb-7 cursor-pointer"
       >
         Go Back
       </button>
@@ -29,7 +29,7 @@ export default function Movie({ loaderData }) {
           src={`https://image.tmdb.org/t/p/original${loaderData.poster_path}`}
           alt={`Poster of ${loaderData.title}`}
         />
-        <div className="px-10 mt-10">
+        <div className="px-10 mt-5">
           <h1 className="font-bold text-4xl">{loaderData.title}</h1>
           <p className="text-[24px] mt-5">{loaderData.overview}</p>
         </div>

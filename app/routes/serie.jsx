@@ -12,14 +12,14 @@ export async function loader({ params }) {
   return serie;
 }
 
-export default function Movie({ loaderData }) {
+export default function Serie({ loaderData }) {
   let navigate = useNavigate();
   console.log({ serie: loaderData });
   return (
     <main className="max-w-6xl mx-auto mt-20">
       <button
         onClick={() => navigate(-1)}
-        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white my-7"
+        className="bg-orange-500 hover:bg-orange-700 px-4 rounded-md py-3 text-white my-7 cursor-pointer"
       >
         Go Back
       </button>
